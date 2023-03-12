@@ -7,6 +7,7 @@ This repository contains Javascript -Cypress Automation code to automate testing
 Pre Requisuites: 
 
 Install node JS 
+set up environment variable
 Install Cypress using 
 npm init
 once done, run the command 
@@ -17,21 +18,20 @@ npm install @badeball/cypress-cucumber-preprocessor
 Update setupNodeEvents in cypress.config file and also update broserify depedancy and import in config file
 Update the spec pattern in config file -> Specify the file path to Run in Spec pattern.
 
-Directory Structure: 
+To execute the code, clone the code and copy it in your local and execute all the commands given using terminal
 
-![image](https://user-images.githubusercontent.com/122528540/224563139-7693a45b-ed62-4416-a898-7fed471c36f0.png)
+we can run code by 2 ways
 
+through terminal: 
 
-Cypress.Integration folder: Consist of JS files written in Cypress and code flow using describe() and it()
-Cypress.Integration.BDD Folder : Contains Feature file and Step definition
-Cypress.Integration.BDD.Feature file : Contains feature and scenario of e-commerce page testing flow in basic english understandable by Business people or non-Technical people
-Cypress.Integration.BDD.Step Definition file: Imported the page object model adn imported the cucumber framework. Post that, this fiel contains the actual implementation of the features mentioned int he feature file. 
+npx cypress run --spec cypress\integration\BDD\*.feature --headed --browser chrome
+npx cypress-tags run -e TAGS="@Regression" --headed --browser chrome
+npx cypress run --spec cypress/integration/BDD/*.feature --headed --browser chrome --env url="https://www.newlook.com/uk"
 
-Cypress.Object folder: Consists objects stating all the xpath,css locators.
+Through Cypress
 
-Cypress.Support Folder : Contains Page Objects and write all the objects present in the page and export the pages in test file
+Open the cypress by npx cypress open and select E2E testing, Choose the desired browser and click Start E2E testing, Select the Step file/ Feature file pointed in the Spec. 
 
-Cypress.config - Contains  the standard configurations like View port,Default time out,Url,Retries,Specpattern 
 
 
 
