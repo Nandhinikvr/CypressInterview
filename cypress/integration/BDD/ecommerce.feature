@@ -1,5 +1,5 @@
 Feature: Ecommerce validation
-
+    //Feature file for a given scenario
     application Regression
     @Regression
     Scenario: Compare quantity of items present in the Mens clothing without and with filter
