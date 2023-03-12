@@ -1,4 +1,5 @@
 /// <reference types="Cypress" />
+//Import Hme page Objects, Mensclothing page objects and Cucumber dependancies
 import HomePage from '../../../support/pageObjects/HomePage'
 import MensclothingPage from '../../../support/pageObjects/MensclothingPage'
 import { Given,When,And,Then } from "@badeball/cypress-cucumber-preprocessor";
@@ -21,12 +22,14 @@ When('I accept cookies and close sign up form',function ()
     homePage.closeSignupFormButton().should('be.visible').click()
 })
 
+//Navigating to Mens Clothing page
 When('Navigate to Mens Clothing',function()
 {
     homePage.mensCLothingTab().click({ force: true })
 
 })
 
+//Checking Results for Mens Clothing
 When('Check results for mens clothing',function()
 {
     mensclothingPage.totalResultCount().then(function (logoelement) {
@@ -36,6 +39,7 @@ When('Check results for mens clothing',function()
     })
 })
 
+//Select Category as Mens Jeans in Mens clothing page
 When('Select category as mens jeans',function()
 {
     mensclothingPage.filterBarSection().each(($el, index, $list) => {
@@ -47,6 +51,7 @@ When('Select category as mens jeans',function()
     mensclothingPage.selectorButton().contains('Mens Jeans').click()
 })
 
+//Selce Brand as New Look in Mens clothing page
 When('Select brand as New Look',function()
 {
     mensclothingPage.filterBarSection().each(($el, index, $list) => {
@@ -58,6 +63,7 @@ When('Select brand as New Look',function()
     mensclothingPage.selectorButton().contains('New Look').click()        
 })
 
+//Select Color as Black in Mens Clothing page
 When('select Color as Black',function()
 {
     mensclothingPage.filterBarSection().each(($el, index, $list) => {
@@ -68,10 +74,12 @@ When('select Color as Black',function()
     })
     mensclothingPage.colorSelector().contains('Black')
         .click({ force: true })     
-        mensclothingPage.totalResultCount().click()
+    
+    //To click outside the Filter tab and to see the result
+    mensclothingPage.totalResultCount().click()
 })
 
-//Then Compare Count of filtered results of men's clothing with the result we received without any filter
+//Then Compare Count of filtered results of mens clothing with the result we received without any filter
 
     Then('Compare Count of filtered results of mens clothing with the result we received without any filter',()=>
     {
