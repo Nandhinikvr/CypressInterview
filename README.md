@@ -19,14 +19,8 @@ Update the spec pattern in config file -> Specify the file path to Run in Spec p
 
 Directory Structure: 
 
-S:.
-????fixtures
-????integration
-?   ????BDD
-?       ????ecommerce
-????objects
-????support
-    ????Pageobjects
+![image](https://user-images.githubusercontent.com/122528540/224563139-7693a45b-ed62-4416-a898-7fed471c36f0.png)
+
 
 Cypress.Integration folder: Consist of JS files written in Cypress and code flow using describe() and it()
 Cypress.Integration.BDD Folder : Contains Feature file and Step definition
